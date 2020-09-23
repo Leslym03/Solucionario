@@ -12,10 +12,10 @@ int main(){
 
     res= m/(n-1); 
 
-    bool arr_aux[n];
-    arr[0]=true;
+    int arr_aux[n];
+    arr[0]=1;
     for(int i=1; i<n; i++)
-        arr_aux[i] = false;
+        arr_aux[i] = 0;
 
     int aux, cont;
 
@@ -25,13 +25,12 @@ int main(){
         while(aux<= m){
             for(int i=0; i<n; i++){
                 if(aux>arr[i] && aux<=arr[i+1])
-                    arr_aux[i] = true;
+                    arr_aux[i] = 1;
             }
             aux += res;
         }
         for(int i=0; i<n; i++){
-            //printf("%d ", arr_aux[i]);
-            if(arr_aux[i]== true)
+            if(arr_aux[i]== 1)
                 cont++;
         }
         if(cont >= n)
